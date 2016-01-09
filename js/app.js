@@ -46,7 +46,7 @@ function init() {
 
      $.ajax({
        type: "POST",
-       url: 'https://rsstojson.udacity.com/parseFeed',
+       url: 'https://rsstojson.udacity.com/parseFeed', // udacity api
        data: JSON.stringify({url: feedUrl}),
        contentType:"application/json",
        success: function (result, status){
@@ -54,7 +54,8 @@ function init() {
                  var container = $('.feed'),
                      title = $('.header-title'),
                      entries = result.feed.entries,
-                     entriesLen = entries.length,
+                     // console.log(result);
+                     entriesLen = entries.length, //10
                      entryTemplate = Handlebars.compile($('.tpl-entry').html());
 
                  title.html(feedName);   // Set the header text
@@ -66,6 +67,7 @@ function init() {
                   * the resulting HTML to the list of entries on the page.
                   */
                  entries.forEach(function(entry) {
+                    // console.log(entry);
                      container.append(entryTemplate(entry));
                  });
 
