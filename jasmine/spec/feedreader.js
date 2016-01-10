@@ -55,10 +55,13 @@ $(function() {
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
         var body, 
-            menuDropdown;
+            menuDropdown,
+            hamburgerButton;
+
         beforeEach(function() {
             this.body = $('body');
             this.menuDropdown = $('.slide-menu');
+            this.hamburgerButton = $('.menu-icon-link');
         });
 
 
@@ -79,6 +82,15 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+        it('displays when clicked and does hide when clicked', function() {
+            // Trigger click function without actually clicking on it
+            // CREDIT: https://stackoverflow.com/questions/773639/how-can-i-simulate-an-anchor-click-via-jquery
+            this.hamburgerButton.trigger('click');
+            expect(this.body.hasClass('menu-hidden')).not.toBe(true);
+
+            this.hamburgerButton.trigger('click');
+            expect(this.body.hasClass('menu-hidden')).toBe(true);
+        });
     });
 
     /* TODO: Write a new test suite named "Initial Entries" */
