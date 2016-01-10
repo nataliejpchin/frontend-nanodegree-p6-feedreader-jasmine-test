@@ -54,17 +54,25 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
+        var body, 
+            menuDropdown;
+        beforeEach(function() {
+            this.body = $('body');
+            this.menuDropdown = $('.slide-menu');
+        });
 
-        var body = $('body');
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-         it('hidden by default', function() {
-            expect(body.hasClass('menu-hidden')).toBe(true);
-         });
+        it('hidden by default', function() {
+            expect(this.body.hasClass('menu-hidden')).toBe(true);
+            // Check for the position of the slide menu element to make sure it is truly not on the screen
+            // CREDIT: https://discussions.udacity.com/t/testing-the-dom-in-jasmine/8438/4
+            expect(this.menuDropdown.offset().left).toBeLessThan(0);
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
