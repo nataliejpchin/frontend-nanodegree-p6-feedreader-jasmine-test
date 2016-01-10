@@ -107,7 +107,7 @@ $(function() {
         // done callback signals that the async function is done loading the feed
         // Further Explanation on done: https://github.com/jasmine/jasmine/issues/988
         beforeEach(function(done) {
-            loadFeed(0, done); //
+            loadFeed(0, done);
         });
 
         // async function that does not have to wait for all the feed to load to test
@@ -123,5 +123,25 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+        // CREDIT: https://discussions.udacity.com/t/new-feed-selection-question/16274/14
+        // CREDIT: https://discussions.udacity.com/t/trouble-with-the-new-feed-test-and-quest-for-an-explanation/43283/4
+        var newFeed;
+
+        // load data from new feed
+        beforeEach(function(done) {
+            loadFeed(1, function() {
+                newFeed = $('.feed').html();
+                done();
+            });
+        });
+
+        // async function that makes sure new feed is not the same as the initial feed
+        it('content in new feed actually changes', function(done){
+            loadFeed(0, function() {
+                expect($('.feed').html()).not.toEqual(newFeed);
+                done();
+            });
+        });
     });
 }());
