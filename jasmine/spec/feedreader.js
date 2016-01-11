@@ -90,7 +90,7 @@ $(function() {
 
         // async function that does not have to wait for all the feed to load to test
         it('there is at least a single entry within the feed container', function(done){
-            expect($('.entry').length).not.toBeLessThan(0);
+            expect($('.entry').length).toBeGreaterThan(0);
             done();
         });
     });
