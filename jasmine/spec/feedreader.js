@@ -48,19 +48,19 @@ $(function() {
             hamburgerButton;
 
         beforeEach(function() {
-            this.body = $('body');
-            this.menuDropdown = $('.slide-menu');
-            this.hamburgerButton = $('.menu-icon-link');
+            body = $('body');
+            menuDropdown = $('.slide-menu');
+            hamburgerButton = $('.menu-icon-link');
         });
 
 
         /* makes sure the menu element is hidden by default. 
          */
         it('hidden by default', function() {
-            expect(this.body.hasClass('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBe(true);
             // Check for the position of the slide menu element to make sure it is truly not on the screen
             // CREDIT: https://discussions.udacity.com/t/testing-the-dom-in-jasmine/8438/4
-            expect(this.menuDropdown.offset().left).toBeLessThan(0);
+            expect(menuDropdown.offset().left).toBeLessThan(0);
         });
 
          /* makes sure the menu changes visibility when the menu icon is clicked
@@ -68,11 +68,11 @@ $(function() {
         it('displays when clicked and does hide when clicked', function() {
             // Trigger click function without actually clicking on it
             // CREDIT: https://stackoverflow.com/questions/773639/how-can-i-simulate-an-anchor-click-via-jquery
-            this.hamburgerButton.trigger('click');
-            expect(this.body.hasClass('menu-hidden')).not.toBe(true);
+            hamburgerButton.trigger('click');
+            expect(body.hasClass('menu-hidden')).not.toBe(true);
 
-            this.hamburgerButton.trigger('click');
-            expect(this.body.hasClass('menu-hidden')).toBe(true);
+            hamburgerButton.trigger('click');
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
