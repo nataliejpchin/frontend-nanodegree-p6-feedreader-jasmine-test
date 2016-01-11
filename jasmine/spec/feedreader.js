@@ -79,7 +79,6 @@ $(function() {
     /* new test suite about initial entries from the feed */
     // CREDIT: https://discussions.udacity.com/t/initial-entries-problem/40200
     describe('Initial Entries', function() {
-        var entry = $('.entry');
         /* makes sure when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container.
          */
 
@@ -91,7 +90,7 @@ $(function() {
 
         // async function that does not have to wait for all the feed to load to test
         it('there is at least a single entry within the feed container', function(done){
-            expect(entry.length).not.toBeLessThan(0);
+            expect($('.entry').length).not.toBeLessThan(0);
             done();
         });
     });
