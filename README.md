@@ -16,7 +16,7 @@ I used [Jasmine](http://jasmine.github.io/) to test the underlying business logi
 2. Unzip folder and double click on index.html
 3. You can search by name or click on the markers on the map to view information about the attraction
 
-**OR** view the project here http://njpchin.github.io/feedreader-jasmine-test/
+**OR** view the project here http://njpchin.github.io/frontend-nanodegree-p6-feedreader-jasmine-test
 
 
 ## Credits
