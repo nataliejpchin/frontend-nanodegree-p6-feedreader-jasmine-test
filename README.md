@@ -11,7 +11,12 @@ I used [Jasmine](http://jasmine.github.io/) to test the underlying business logi
 * test that ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container
 * test that ensures when a new feed is loaded by the loadFeed function that the content actually changes
 
-View the project here http://nataliejpchin.github.io/frontend-nanodegree-p6-feedreader-jasmine-test
+## How to run this application?
+This application will run in your browser.
+1. Clone this repository or download zip link
+2. Unzip folder and double click on index.html
+
+**OR** view the project here http://nataliejpchin.github.io/frontend-nanodegree-p6-feedreader-jasmine-test
 
 
 ## Credits
